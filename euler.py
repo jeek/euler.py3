@@ -32,7 +32,7 @@ def fib(first, second):
     yield first
     yield second
     while True:
-        first, second = first, first + second
+        first, second = second, first + second
         yield second
 
 def problem002(target=4000000):
