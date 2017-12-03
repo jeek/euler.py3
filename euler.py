@@ -148,9 +148,11 @@ class TestProblem005(unittest.TestCase):
         self.assertGreater(start + 60, finish)
 
 def sumofsquares(numbers):
+    """Sum of squares."""
     return sum([i ** 2 for i in numbers])
 
 def squareofsums(numbers):
+    """Square of sums."""
     return sum(numbers) ** 2
 
 def problem006(target=100):
