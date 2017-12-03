@@ -147,9 +147,35 @@ class TestProblem005(unittest.TestCase):
         finish = time.clock()
         self.assertGreater(start + 60, finish)
 
+def sumofsquares(numbers):
+    return sum([i ** 2 for i in numbers])
+
+def squareofsums(numbers):
+    return sum(numbers) ** 2
+
+def problem006(target=100):
+    """Problem number six."""
+    return squareofsums(range(1, target + 1)) - sumofsquares(range(1, target + 1))
+
+class TestProblem006(unittest.TestCase):
+    """Check problem number six."""
+    def test_006test(self):
+        """Check the test case."""
+        self.assertEqual(problem006(10), 2640)
+    def test_006answer(self):
+        """Check the answer."""
+        self.assertEqual(problem006(), 25164150)
+    def test_006time(self):
+        """60 second check."""
+        start = time.clock()
+        problem006()
+        finish = time.clock()
+        self.assertGreater(start + 60, finish)
+
 if __name__ == "__main__":
     print(1, problem001())
     print(2, problem002())
     print(3, problem003())
     print(4, problem004())
     print(5, problem005())
+    print(6, problem006())
