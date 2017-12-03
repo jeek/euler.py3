@@ -174,6 +174,31 @@ class TestProblem006(unittest.TestCase):
         finish = time.clock()
         self.assertGreater(start + 60, finish)
 
+def problem007(target=10001):
+    """Problem number seven."""
+    primes = [2]
+    i = 3
+    while len(primes) < target:
+        if len([j for j in primes if i % j == 0]) == 0:
+            primes.append(i)
+        i += 1
+    return primes[-1]
+
+class TestProblem007(unittest.TestCase):
+    """Check problem number seven."""
+    def test_007test(self):
+        """Check the test case."""
+        self.assertEqual(problem007(6), 13)
+    def test_007answer(self):
+        """Check the answer."""
+        self.assertEqual(problem007(), 104743)
+    def test_007time(self):
+        """60 second check."""
+        start = time.clock()
+        problem007()
+        finish = time.clock()
+        self.assertGreater(start + 60, finish)
+
 if __name__ == "__main__":
     print(1, problem001())
     print(2, problem002())
@@ -181,3 +206,4 @@ if __name__ == "__main__":
     print(4, problem004())
     print(5, problem005())
     print(6, problem006())
+    print(7, problem007())
