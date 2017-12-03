@@ -147,9 +147,37 @@ class TestProblem005(unittest.TestCase):
         finish = time.clock()
         self.assertGreater(start + 60, finish)
 
+def sumofdigits(target):
+    "Return the sum of digits."""
+    answer = 0
+    while target > 0:
+        answer += target % 10
+        target //= 10
+    return answer
+
+def problem016(target = 2 ** 1000):
+    """Sum of digits."""
+    return sumofdigits(target)
+
+class TestProblem016(unittest.TestCase):
+    """Check problem number five."""
+    def test_016test(self):
+        """Check the test case."""
+        self.assertEqual(problem016(2 ** 15), 26)
+    def test_016answer(self):
+        """Check the answer."""
+        self.assertEqual(problem016(), 1366)
+    def test_016time(self):
+        """60 second check."""
+        start = time.clock()
+        problem016()
+        finish = time.clock()
+        self.assertGreater(start + 60, finish)
+
 if __name__ == "__main__":
     print(1, problem001())
     print(2, problem002())
     print(3, problem003())
     print(4, problem004())
     print(5, problem005())
+    print(16, problem016())
