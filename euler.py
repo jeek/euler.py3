@@ -126,7 +126,7 @@ def gcd(first, second):
 
 def lcm(first, second):
     """Least Common Multiple."""
-    return first * second / gcd(first, second)
+    return first * second // gcd(first, second)
 
 def problem005(target=20):
     """Problem number five."""
